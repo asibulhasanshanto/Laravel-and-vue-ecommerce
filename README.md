@@ -2,7 +2,7 @@
 
 A simple ecommerce project using laravel and vue
 
-## Installing Laravel9 and Vue3 installation
+## Laravel9 and Vue3 installation
 
 1. ```bash
    laravel new ecommerce
