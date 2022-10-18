@@ -1,12 +1,25 @@
 <template>
-    <div class="test">
-        <router-link :to="{ name: 'Home' }">Home</router-link>
-        <router-link :to="{ name: 'Login' }">Login</router-link>
-        <router-link :to="{ name: 'Registration' }">Registration</router-link>
-    </div>
-    <div class="">
-        <router-view></router-view>
-    </div>
+    <Header></Header>
+
+    <Navbar></Navbar>
+    <!-- other pages via route -->
+    <router-view></router-view>
+
+    <!-- footer -->
+    <Footer></Footer>
 </template>
 
+<script>
+import Header from "./components/Header.vue";
+import Footer from "./components/Footer.vue";
+import Navbar from "./components/Navbar.vue";
 
+export default {
+    name: "App",
+    components: {
+        Header,
+        Footer,
+        Navbar,
+    },
+};
+</script>

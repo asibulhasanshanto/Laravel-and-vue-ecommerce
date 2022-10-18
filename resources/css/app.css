@@ -3,7 +3,9 @@
 @tailwind utilities;
 
 @layer base {
-    @import "./base.css";
+    html{
+        scroll-behavior: smooth;
+    }
     h1,
     h2,
     h3,
@@ -26,3 +28,16 @@
         font-size: 1.5rem;
     }
 }
+
+@layer components{
+    .size-selector input:checked + label{
+        @apply bg-primary text-white;
+    }
+    .color-selector input:checked + label{
+        @apply ring-2 ring-primary;
+    }
+    .input-box{
+        @apply w-full block border border-gray-300 px-4 py-3 text-gray-600 text-sm rounded focus:ring-0 focus:border-primary placeholder-gray-400;
+    }
+}
+
