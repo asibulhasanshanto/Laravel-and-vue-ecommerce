@@ -9,7 +9,7 @@
                     <div
                         class="flex items-center space-x-6 text-base capitalize"
                     >
-                        <Navmenu></Navmenu>
+                        <Navmenu :navItems="navItems"></Navmenu>
                     </div>
                     <router-link
                         class="ml-auto justify-self-end text-gray-200 hover:text-white transition"
@@ -93,7 +93,7 @@
             </h3>
             <div class="flex flex-col justify-between h-full">
                 <div class="link_holder">
-                    <Navmenu></Navmenu>
+                    <Navmenu :navItems="navItems"></Navmenu>
                 </div>
                 <div class="login_holder flex items-start">
                     <router-link
@@ -118,7 +118,7 @@ export default {
     data() {
         return {
             mobileSidebar: false,
-            NavItems: [
+            navItems: [
                 {
                     name: "Home",
                     linkName: "Home",
