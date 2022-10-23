@@ -11,11 +11,7 @@
                     >
                         <Navmenu :navItems="navItems"></Navmenu>
                     </div>
-                    <router-link
-                        class="ml-auto justify-self-end text-gray-200 hover:text-white transition"
-                        :to="{ name: 'Login' }"
-                        >Login</router-link
-                    >
+                    <LoginButton type="desktop" ></LoginButton>
                 </div>
                 <!-- nav menu end -->
             </div>
@@ -95,13 +91,7 @@
                 <div class="link_holder">
                     <Navmenu :navItems="navItems"></Navmenu>
                 </div>
-                <div class="login_holder flex items-start">
-                    <router-link
-                        class="mb-20 ml-6 text-white bg-primary px-4 py-2 rounded-md flex items-center justify-center font-bold hover:border hover:border-primary hover:bg-white hover:text-primary transition"
-                        :to="{ name: 'Login' }"
-                        >Login</router-link
-                    >
-                </div>
+                <LoginButton type="mobile" ></LoginButton>
             </div>
 
             <!-- navlinks end -->
@@ -113,6 +103,7 @@
 <script>
 import Categories from "./Categories.vue";
 import Navmenu from "./Navmenu.vue";
+import LoginButton from "./buttons/LoginButton.vue";
 export default {
     name: "Navbar",
     data() {
@@ -150,6 +141,7 @@ export default {
     components: {
         Categories,
         Navmenu,
+        LoginButton,
     },
     mounted() {
         window.addEventListener("resize", this.resetWindow);
