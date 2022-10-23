@@ -5,19 +5,23 @@ const state = () => ({
 
 // getters
 const getters = {
-    isAuthenticated: (state) => !!state.user,
+    isAuthenticated: (state) => {
+        console.log("isAuthenticated", state.user !== null);
+        return state.user !== null;
+    },
 };
 
 // actions
 const actions = {
     async login({ commit }, { email, password }) {
+        console.log("login action");
         try {
             // const { data } = await axios.post('/api/login', { email, password })
             const data = {
                 user: {
                     id: 1,
                     name: "John Doe",
-                    email: "test@test.com",
+                    email,
                 },
             };
             commit("setUser", data.user);

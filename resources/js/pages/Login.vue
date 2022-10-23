@@ -1,10 +1,12 @@
 <template>
     <!-- form wrapper -->
     <div class="container py-16">
-        <div class="max-w-lg mx-auto shadow-xl px-6 py-7 rounded overflow-hidden">
+        <div
+            class="max-w-lg mx-auto shadow-xl px-6 py-7 rounded overflow-hidden"
+        >
             <h2 class="text-2xl uppercase font-medium mb-6">LOGIN</h2>
 
-            <form action="">
+            <form @submit.prevent="submit">
                 <div class="space-y-4">
                     <div>
                         <label class="text-gray-600 mb-2 block">
@@ -60,3 +62,15 @@
     </div>
     <!-- form wrapper end -->
 </template>
+<script>
+import { mapActions } from "vuex";
+export default {
+    name: "Login",
+    methods: {
+        ...mapActions("authentication", ["login"]),
+        async submit() {
+            await this.login("test@test.com", "password");
+        },
+    },
+};
+</script>

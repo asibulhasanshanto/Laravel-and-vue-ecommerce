@@ -11,7 +11,7 @@
                     >
                         <Navmenu :navItems="navItems"></Navmenu>
                     </div>
-                    <LoginButton type="desktop" ></LoginButton>
+                    <LoginButton type="desktop"></LoginButton>
                 </div>
                 <!-- nav menu end -->
             </div>
@@ -91,7 +91,7 @@
                 <div class="link_holder">
                     <Navmenu :navItems="navItems"></Navmenu>
                 </div>
-                <LoginButton type="mobile" ></LoginButton>
+                <LoginButton type="mobile"></LoginButton>
             </div>
 
             <!-- navlinks end -->
@@ -104,6 +104,7 @@
 import Categories from "./Categories.vue";
 import Navmenu from "./Navmenu.vue";
 import LoginButton from "./buttons/LoginButton.vue";
+import { mapGetters, mapActions } from "vuex";
 export default {
     name: "Navbar",
     data() {
@@ -137,6 +138,9 @@ export default {
         resetWindow() {
             this.mobileSidebar = false;
         },
+    },
+    computed: {
+        ...mapGetters("authentication", ["isAuthenticated"]),
     },
     components: {
         Categories,
