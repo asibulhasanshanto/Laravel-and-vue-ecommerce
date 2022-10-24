@@ -20,7 +20,7 @@
                 </span>
                 <input
                     type="text"
-                    class="pl-12 w-full border border-r-0 border-primary focus:outline-primary py-3 px-3 rounded-l-md focus:border-primary  transition-all duration-300"
+                    class="pl-12 w-full border border-r-0 border-primary focus:outline-primary py-3 px-3 rounded-l-md focus:border-primary transition-all duration-300"
                     placeholder="search"
                 />
                 <button
@@ -61,6 +61,7 @@
                     <div class="text-xs leading-3">Cart</div>
                 </a>
                 <a
+                    v-if="isAuthenticated"
                     href="account.html"
                     class="block text-center text-gray-700 hover:text-primary transition"
                 >
@@ -75,3 +76,11 @@
     </header>
     <!-- header end -->
 </template>
+<script>
+import { mapGetters } from "vuex";
+export default {
+    computed: {
+        ...mapGetters("authentication", ["isAuthenticated"]),
+    },
+};
+</script>

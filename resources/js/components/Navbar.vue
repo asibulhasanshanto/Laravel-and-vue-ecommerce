@@ -117,7 +117,7 @@ export default {
                 },
                 {
                     name: "Shop",
-                    linkName: "Home",
+                    linkName: "Shop",
                 },
                 {
                     name: "About",
